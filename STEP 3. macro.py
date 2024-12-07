@@ -8,6 +8,7 @@ hwnd = GetForegroundWindow()
 SetWindowPos(hwnd,HWND_TOPMOST,100,100,475,300,0)
 
 print("important! add these arrow binds: \nLeft-F\nUp-G\nDown-K\nRight-L")
+print("btw it can't hold hold notes \n so play maps with the least hold notes")
 print("observing pixels...")
 while True:
     if pixel(730,y)[0] == 194:
