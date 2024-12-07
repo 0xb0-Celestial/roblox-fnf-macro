@@ -1,11 +1,11 @@
 from keyboard import press_and_release
 from pyautogui import pixel
-import win32gui
-import win32con
+from win32gui import GetForegroundWindow, SetWindowPos
+from win32con import HWND_TOPMOST
 
 y = 200
-hwnd = win32gui.GetForegroundWindow()
-win32gui.SetWindowPos(hwnd,win32con.HWND_TOPMOST,100,100,475,300,0)
+hwnd = GetForegroundWindow()
+SetWindowPos(hwnd,HWND_TOPMOST,100,100,475,300,0)
 
 print("important! add these arrow binds: \nLeft-F\nUp-G\nDown-K\nRight-L")
 print("observing pixels...")
