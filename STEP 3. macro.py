@@ -8,13 +8,19 @@ from os import system
 
 y = 190
 
+def window_settings():
+    hwnd = GetForegroundWindow()
+    SetWindowPos(hwnd,HWND_TOPMOST,100,100,475,300,0)
 def LeftArrow():
+    system('cls')
+    print("important! add these arrow binds: \nLeft-F\nUp-G\nDown-K\nRight-L")
     while True:
         if pixel(735,y)[1] == 75:
             press("f")
             if pixel(735,y+51)[1] != 75:
                 release("f")
 def DownArrow():
+    print("observing pixels...")
     while True:
         if pixel(885,y)[1] == 255:
             press("g")
@@ -44,8 +50,4 @@ def parallel(*fns):
             p.join()
 
 parallel(LeftArrow,DownArrow,UpArrow,RightArrow)
-system('cls')
-hwnd = GetForegroundWindow()
-SetWindowPos(hwnd,HWND_TOPMOST,100,100,475,300,0)
-print("important! add these arrow binds: \nLeft-F\nUp-G\nDown-K\nRight-L")
-print("observing pixels...")
+window_settings()
